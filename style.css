@@ -1,0 +1,159 @@
+:root {
+  --clr-dim: #94a3b8;
+  --clr-yellow: #fde047;
+  --clr-lime: #bef264;
+  --clr-blue: #4b9cdb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+label {
+  display: inline-block;
+  width: 3rem;
+  text-align: end;
+  color: var(--clr-dim);
+  margin-right: 0.3rem;
+}
+
+input,
+select {
+  padding: 0.7rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--clr-dim);
+  border-radius: 0.5em;
+}
+
+input {
+  color: var(--clr-yellow);
+  width: 10rem;
+  position: absolute;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+select {
+  display: inline-block;
+  position: relative;
+  left: 9.9rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.popup {
+  width: 610px;
+  max-width: 800px;
+}
+
+.controls {
+  display: flex;
+  gap: 31rem;
+  margin-bottom: 1.5rem;
+}
+
+.currency-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.from-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+#from {
+  position: absolute;
+  top: 0;
+  left: 13.25rem;
+}
+
+.to-wrapper {
+  position: relative;
+}
+#to {
+  position: absolute;
+  top: 0;
+  left: 13.25rem;
+}
+
+.result-display {
+  font-size: 1.5rem;
+  margin-left: 3.5rem;
+  max-width: 35ch;
+}
+
+.result-display span {
+  font-size: 1.5rem;
+}
+
+.converted {
+  color: var(--clr-lime);
+}
+
+#switch-btn {
+  color: var(--clr-dim);
+  background-color: none;
+  border: none;
+  width: 2.3rem;
+  margin: 1em;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+#switch-btn:hover {
+  color: var(--clr-blue);
+}
+
+/* Loading animation */
+
+.load {
+  display: none;
+  position: absolute;
+  top: 3.9rem;
+  left: 4.4rem;
+}
+
+.line {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 15px;
+  background-color: var(--clr-blue);
+}
+
+.load .line:nth-last-child(1) {
+  animation: loadingC 0.6s 0.1s linear infinite;
+}
+.load .line:nth-last-child(2) {
+  animation: loadingC 0.6s 0.2s linear infinite;
+}
+.load .line:nth-last-child(3) {
+  animation: loadingC 0.6s 0.3s linear infinite;
+}
+
+@keyframes loadingC {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
